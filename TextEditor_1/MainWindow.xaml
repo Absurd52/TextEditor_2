@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <!-- Стиль для кнопок панели инструментов с иконками -->
+        
         <Style x:Key="ToolBarButtonWithIcon" TargetType="Button">
             <Setter Property="Height" Value="32"/>
             <Setter Property="Width" Value="36"/>
@@ -32,13 +32,13 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Стиль для пунктов меню (теперь БЕЗ иконок) -->
+        
         <Style x:Key="MenuItemWithIcon" TargetType="MenuItem">
             <Setter Property="Padding" Value="8,4"/>
             <Setter Property="FontSize" Value="13"/>
         </Style>
 
-        <!-- Иконки с использованием Segoe MDL2 Assets (нужны Toolbar/StatusBar) -->
+        
         <Style x:Key="IconTextBlock" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
             <Setter Property="FontSize" Value="16"/>
@@ -48,9 +48,9 @@
     </Window.Resources>
 
     <DockPanel LastChildFill="True">
-        <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
+        
         <Menu DockPanel.Dock="Top" Height="24" FontSize="14" Background="#F0F0F0">
-            <!-- Файл -->
+            
             <MenuItem Header="_Файл">
                 <MenuItem x:Name="NewMenuItem" Header="_Создать" InputGestureText="Ctrl+N" 
                           Style="{StaticResource MenuItemWithIcon}" Click="NewMenuItem_Click"/>
@@ -65,7 +65,7 @@
                           Style="{StaticResource MenuItemWithIcon}" Click="ExitMenuItem_Click"/>
             </MenuItem>
 
-            <!-- Правка -->
+            
             <MenuItem Header="_Правка">
                 <MenuItem x:Name="UndoMenuItem" Header="_Отменить" InputGestureText="Ctrl+Z" 
                           Style="{StaticResource MenuItemWithIcon}" Click="UndoMenuItem_Click"/>
@@ -85,7 +85,7 @@
                           Style="{StaticResource MenuItemWithIcon}" Click="SelectAllMenuItem_Click"/>
             </MenuItem>
 
-            <!-- Текст -->
+            
             <MenuItem Header="_Текст">
                 <MenuItem x:Name="TaskMenuItem" Header="Постановка задачи" Click="TextMenuItem_Click"/>
                 <MenuItem x:Name="GrammarMenuItem" Header="Грамматика" Click="TextMenuItem_Click"/>
@@ -96,24 +96,24 @@
                 <MenuItem x:Name="SourceCodeMenuItem" Header="Исходный код программы" Click="TextMenuItem_Click"/>
             </MenuItem>
 
-            <!-- Пуск -->
+            
             <MenuItem x:Name="StartMenuItem" Header="_Пуск">
                 <MenuItem x:Name="RunAnalyzerMenuItem" Header="Запуск анализатора" Click="RunAnalyzerMenuItem_Click"/>
             </MenuItem>
 
-            <!-- Справка -->
+            
             <MenuItem Header="_Справка">
                 <MenuItem x:Name="HelpMenuItem" Header="Вызов _справки" InputGestureText="F1" Click="HelpMenuItem_Click"/>
                 <MenuItem x:Name="AboutMenuItem" Header="_О программе" Click="AboutMenuItem_Click"/>
             </MenuItem>
         </Menu>
 
-        <!-- ===== ПАНЕЛЬ ИНСТРУМЕНТОВ С ИКОНКАМИ ===== -->
-        <!-- ===== ПАНЕЛЬ ИНСТРУМЕНТОВ (РОВНО, БЕЗ ЛИНИЙ, РАВНОМЕРНО ПО ШИРИНЕ) ===== -->
+        
+        
         <ToolBarTray DockPanel.Dock="Top" Background="White">
             <ToolBar Height="64" Background="White" BorderThickness="0">
 
-                <!-- ВАЖНО: в шаблоне должен быть ItemsPresenter -->
+                
                 <ToolBar.Template>
                     <ControlTemplate TargetType="{x:Type ToolBar}">
                         <Border Background="{TemplateBinding Background}"
@@ -124,14 +124,14 @@
                     </ControlTemplate>
                 </ToolBar.Template>
 
-                <!-- Равномерное распределение по ширине -->
+                
                 <ToolBar.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="1" Columns="11"/>
                     </ItemsPanelTemplate>
                 </ToolBar.ItemsPanel>
 
-                <!-- Кнопки -->
+                
                 <Button x:Name="NewButton" Style="{StaticResource ToolBarButtonWithIcon}" Click="NewMenuItem_Click" ToolTip="Создать (Ctrl+N)">
                     <TextBlock Style="{StaticResource IconTextBlock}" Text="&#xE710;" FontSize="20"/>
                 </Button>
@@ -179,7 +179,7 @@
             </ToolBar>
         </ToolBarTray>
 
-        <!-- ===== СТРОКА СОСТОЯНИЯ ===== -->
+        
         <StatusBar DockPanel.Dock="Bottom" Height="28" Background="#F0F0F0">
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
@@ -193,7 +193,7 @@
             </StatusBarItem>
         </StatusBar>
 
-        <!-- ===== ОСНОВНОЙ КОНТЕЙНЕР С ИЗМЕНЯЕМЫМИ ОБЛАСТЯМИ ===== -->
+        
         <Grid Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
