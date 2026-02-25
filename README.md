@@ -82,14 +82,6 @@
 
 ---
 
-### Панель инструментов
-
-<p align="center">
-  <img src="images/toolbar.jpg" width="800"/>
-</p>
-
----
-
 ### Пример результата анализа
 
 <p align="center">
